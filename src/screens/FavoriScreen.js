@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Icon from "react-native-vector-icons/Ionicons";
 import { removemovie } from "../redux/favoriteSlice";
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaView } from "react-native";
 
-export default function MyFavori() {
+export default function MyFavorite() {
     const navigation = useNavigation();
     const myfavorite = useSelector((state = {}) => state.favorite.myfavorite);
     const dispatch = useDispatch();

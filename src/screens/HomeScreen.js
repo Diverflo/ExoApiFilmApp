@@ -8,8 +8,6 @@ export default function MyHome() {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
-    // console.log("data " + data.results.title);
-
     //fetch the api from themoviedb
     useEffect(() => {
         fetch(

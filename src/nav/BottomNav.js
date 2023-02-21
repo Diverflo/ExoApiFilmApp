@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MyFavori from "../screens/FavoriScreen";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MySearch from "../screens/SearchScreen";
 import StackNav from "./StackNav";
+import MyFavorite from "../screens/FavoriScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -10,7 +10,7 @@ export default function MyNav() {
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
+                tabBarIcon: ({ focused, color }) => {
                     let iconName;
 
                     if (route.name === "Home") {
@@ -31,7 +31,7 @@ export default function MyNav() {
             })}
         >
             <Tab.Screen name="Home" component={StackNav} />
-            <Tab.Screen name="Favoris" component={MyFavori} />
+            <Tab.Screen name="Favoris" component={MyFavorite} />
             <Tab.Screen name="Search" component={MySearch} />
         </Tab.Navigator>
     );

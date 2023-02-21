@@ -9,15 +9,13 @@ import { addmovie, removemovie } from "../redux/favoriteSlice";
 
 export default function Detail(props) {
     const myprops = props.route.params.item;
-    // console.log(props.route.params.item);
+
     const navigation = useNavigation();
     const [isFavorite, setFavorite] = useState(false);
+
     // const myfavorite = useSelector((state) => state.favorite.myfavorite);
-    const myfavorite = useSelector((state) => state.favorite.myfavorite);
     const dispatch = useDispatch();
-    // console.log(dispatch(addmovie));
-    // console.log("myf ", myfavorite);
-    // console.log("myF ", myF);
+
     return (
         <View style={{ flex: 1 }}>
             <Card
@@ -83,7 +81,6 @@ export default function Detail(props) {
                         isFavorite
                             ? dispatch(removemovie(myprops.title))
                             : dispatch(addmovie(myprops));
-                    // console.log("remove ", removemovie(myprops.title));
                 }}
                 size="small"
                 style={{

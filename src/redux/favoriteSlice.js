@@ -10,20 +10,12 @@ export const favoriteSlice = createSlice({
     name: "favorite",
     initialState: initialState,
     reducers: {
-        // pour ajouter favoris
+        // to add favorite
         addmovie: (state = {}, action) => {
-            // const myFav = [];
-            // console.log("state", state);
             state.myfavorite.push(action.payload);
-            // console.log("state2", action.payload);
-            // state.myfavorite += action.payload;
-            // return action.payload;
-
-            // myfavorite.push(action.payload);
         },
-        // pour supprimer favoris
+        // to delete favorite
         removemovie: (state, action) => {
-            // state.myfavorite.pop(action.payload);
             state.myfavorite = state.myfavorite.filter(
                 (movie) => movie.title !== action.payload
             );
